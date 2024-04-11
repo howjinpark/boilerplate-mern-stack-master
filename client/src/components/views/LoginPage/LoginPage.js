@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { Form, Icon, Input, Button, Checkbox, Typography } from 'antd';
-import { useDispatch } from "react-redux";
+
 
 const { Title } = Typography;
 
-function LoginPage(props) {
+const LoginPage = (props) => {
   const dispatch = useDispatch();
   const rememberMeChecked = localStorage.getItem("rememberMe") ? true : false;
 
@@ -145,5 +146,3 @@ function LoginPage(props) {
 };
 
 export default withRouter(LoginPage);
-
-
